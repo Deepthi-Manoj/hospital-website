@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% block title %}
+Admin Login
+{% endblock %}
+
+{% block content %}
+
+
+<div class="container">
+    <h2 class="text-center">Login</h2>
+    <form method="POST">
+        {% csrf_token %}
+        <label>user name</label>
+        <input type="text" class="form-control" name="username">
+
+        <label>Password</label>
+        <input type="password" class="form-control" name="pwd">
+        <input type="submit" class="form-control btn btn-primary"   value="Login">
+        
+        <div class="alert alert-dark" role="alert">
+       
+       
+    </form>
+    {% for msg in messages %}
+    <script>
+        alert('{{ msg}}');
+    </script>
+    {% endfor %}
+</div>
+            
+</div>
+{% endblock %}

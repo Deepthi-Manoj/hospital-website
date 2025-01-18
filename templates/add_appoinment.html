@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+{% block title %}
+Admin Login
+{% endblock %}
+
+{% block content %}
+    {% if error == "no" %}
+    <script>
+        alert("Record saved successfully");
+        window.location = "{% url 'view_appoinment' %}";
+    </script>
+    {% endif %}
+
+    {% if error == "yes" %}
+    <script>
+        alert("Something went wrong, try again");
+    </script>
+    {% endif %}
+    
+    <div class="container">
+        <h2 class="text-center">Add Appointment</h2>
+        <form method="POST">
+            {% csrf_token %}
+            <label>Doctor name</label>
+            <select name="doctor" class="form-control">
+                {% for i in doctor %}
+                <option value="{{ i.Name }}">{{ i.Name }}</option>
+                {% endfor %}
+            </select>
+
+            <label>Patient name</label>
+            <select name="patient" class="form-control">
+                {% for i in patient %}
+                <option value="{{ i.Name }}">{{ i.Name }}</option>
+                {% endfor %}
+            </select>
+
+            <label>Date</label>
+            <input type="date" class="form-control" name="date">
+
+            <label>Time</label>
+            <input type="time" class="form-control" name="time">
+
+            <input type="submit" class="form-control btn btn-primary" value="Save">
+        </form>
+    </div>
+{% endblock %}

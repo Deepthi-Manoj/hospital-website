@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% block title %}
+Admin Login
+{% endblock %}
+
+{% block content %}
+
+
+
+
+<div class="container">
+    <h2 class="text-center">Add Doctor</h2>
+    <form method="POST">
+        {% csrf_token %}
+        <label>Doctor name</label>
+        <input type="text" class="form-control" name="Name">
+
+        <label>Mobile</label>
+        <input type="text" class="form-control" name="mobile">
+
+        <label>Special</label>
+        <input type="text" class="form-control" name="special">
+
+      <input type="submit" class="form-control btn btn-primary" onclick="return confirm ('record saved')" class="btn btn-danger"></a></td>
+      
+       
+       
+</div>
+{% endblock %}

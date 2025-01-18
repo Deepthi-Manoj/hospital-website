@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% block title %}
+Admin Login
+{% endblock %}
+
+{% block content %}
+
+
+<div class="container">
+    <h2 class="text-center">Add patient</h2>
+    <form method="POST">
+        {% csrf_token %}
+        <label>patient name</label>
+        <input type="text" class="form-control" name="Name">
+
+        <label>Mobile</label>
+        <input type="text" class="form-control" name="mobile">
+
+        <input type="radio" name="gender" value="Male">    
+        <label for="html">Male</label><br>
+        <input type="radio" name="gender" value="Female">
+        <label for="html">Female</label><br>
+
+
+
+        <label>Adress</label>
+        <input type="text" class="form-control" name="adress">
+
+      <input type="submit" class="form-control btn btn-primary" onclick="return confirm ('record saved')" class="btn btn-danger"></a></td>
+      
+       
+       
+</div>
+{% endblock %}
